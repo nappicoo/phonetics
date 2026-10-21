@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phonetics Quiz — Pink Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Floating animated bubbles -->
+<div class="bubble b1"></div>
+<div class="bubble b2"></div>
+<div class="bubble b3"></div>
+<div class="bubble b4"></div>
+<div class="bubble b5"></div>
+
+<main class="page">
+
+  <!-- ============ VIEW 1: LANDING ============ -->
+  <section id="view-start" class="view active">
+    <div class="hero">
+      <div class="hero-badge">Phonetics & Phonology</div>
+      <h1>Knowledge Check</h1>
+      <p class="hero-sub">Test your understanding of speech sounds</p>
+      <div class="meta-row">
+        <span>🌸 <b>15</b> Questions</span>
+        <span>✨ <b>15</b> Points</span>
+        <span>⏱ <b>10</b> min</span>
+      </div>
+    </div>
+
+    <div class="glass quote-card">
+      <div class="quote-text" id="start-quote-text"></div>
+      <div class="quote-author" id="start-quote-author"></div>
+    </div>
+
+    <div class="glass rules">
+      <h2>📖 Quiz Rules</h2>
+      <ul class="rules-list">
+        <li><span class="r-ico">1</span>15 multiple-choice questions about articulatory phonetics.</li>
+        <li><span class="r-ico">2</span>Choose an answer to get <b>instant feedback</b> and see the correct answer.</li>
+        <li><span class="r-ico">3</span>Press <b>Enter</b> or click <b>Next</b> to move forward. Use <b>1-4</b> keys to select options.</li>
+        <li><span class="r-ico">4</span>Questions are randomized every time you take the quiz.</li>
+        <li><span class="r-ico">5</span>At the end, review your score, accuracy, and a list of your mistakes.</li>
+        <li><span class="r-ico">6</span>You can restart anytime using the button at the bottom.</li>
+      </ul>
+    </div>
+
+    <div class="start-wrap">
+      <button class="btn-primary" id="start-btn">
+        <span>Start the Quiz 🌸</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ VIEW 2: QUIZ ============ -->
+  <section id="view-quiz" class="view">
+    <div class="quote-bar">
+      <span id="quiz-quote-text"></span>
+      <span class="q-author" id="quiz-quote-author"></span>
+    </div>
+
+    <div class="glass quiz-hud">
+      <div class="hud-top">
+        <span class="hud-q">Question <b id="current-q">1</b> of <b id="total-q">15</b></span>
+        <span class="hud-acc">Accuracy: <b id="stat-accuracy">0%</b></span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="stats-row">
+        <span class="stat stat-correct">✓ <b id="stat-correct">0</b> Correct</span>
+        <span class="stat stat-wrong">✗ <b id="stat-wrong">0</b> Wrong</span>
+        <span class="stat">◐ <b id="stat-left">15</b> Left</span>
+        <span class="stat">∑ <b id="stat-total">15</b> Total</span>
+      </div>
+    </div>
+
+    <div class="glass question-card">
+      <div class="section-label" id="section-label">Question</div>
+      <h2 class="question-text" id="question-text"></h2>
+      <div class="options" id="options"></div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <div class="nav-row">
+      <button class="btn-secondary" id="btn-prev">← Previous</button>
+      <button class="btn-secondary" id="btn-next">Next →</button>
+    </div>
+
+    <div class="restart-row">
+      <button class="btn-restart" id="btn-restart">🔄 Restart Quiz</button>
+    </div>
+  </section>
+
+  <!-- ============ VIEW 3: RESULTS ============ -->
+  <section id="view-results" class="view">
+    <div class="results-hero">
+      <h1>Quiz Complete 🎀</h1>
+      <p style="color: var(--text-soft);">Here is your result</p>
+    </div>
+
+    <div class="glass score-card">
+      <div class="score-big" id="score-big">0/15</div>
+      <div class="score-label">Final Score</div>
+      <div id="score-percent" class="score-percent">0%</div>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card correct">
+        <span class="ico">✓</span>
+        <b id="res-correct">0</b>
+        <small>Correct</small>
+      </div>
+      <div class="stat-card wrong">
+        <span class="ico">✗</span>
+        <b id="res-wrong">0</b>
+        <small>Wrong</small>
+      </div>
+      <div class="stat-card accuracy">
+        <span class="ico">🎯</span>
+        <b id="res-accuracy">0%</b>
+        <small>Accuracy</small>
+      </div>
+    </div>
+
+    <div class="glass feedback-box">
+      <div class="fb-title" id="fb-title"></div>
+      <p id="fb-text"></p>
+    </div>
+
+    <h2 class="section-title">📋 Mistakes Review</h2>
+    <div class="mistakes" id="mistakes-list"></div>
+
+    <div class="results-restart">
+      <button class="btn-primary" id="btn-restart-results">
+        <span>🔄 Try Again</span>
+      </button>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+          </html>
